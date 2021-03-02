@@ -9,42 +9,34 @@
 #include <cmath>
 using namespace std;
 
-int main(){
+int main()
+{
 	int cnt;
-	long a,b,c;
+	long double a, b, c;
 	cin >> cnt;
 	bool flag[cnt] = {false};
-	bool minus = false;
-	for(int i = 0;i < cnt;i ++){
+	for (int i = 0; i < cnt; i++)
+	{
 		cin >> a >> b >> c;
-		// ...
-		if(a < 0 && b < 0){
-			minus = true;
-		}else if(a > 0 && b > 0){
-			minus = false;
-		}else if((abs(a) > abs(b) && (a > 0 && b < 0)) || (abs(a) < abs(b) && (b > 0 && (a < 0)))){
-			minus = false;
-		}else{
-			minus = true;
-		}
-		// ...
-		if(a + b > c && minus == false){
+		if (a + b > c)
+		{
 			flag[i] = true;
-		}else{
+		}
+		else
+		{
 			flag[i] = false;
 		}
 	}
-	for(int i =0 ;i < cnt;i ++){
-		
-		if(flag[i] == true){
-			cout << "Case #" << i+1 << ": true";
-		}else{
-			cout << "Case #" << i+1 << ": false";
+	for (int i = 0; i < cnt; i++)
+	{
+		if (flag[i] == true)
+		{
+			cout << "Case #" << i + 1 << ": true" << endl;
 		}
-		if(i != cnt-1){
-			cout << endl;
+		else
+		{
+			cout << "Case #" << i + 1 << ": false" << endl;
 		}
-    }
+	}
 	return 0;
 }
-
